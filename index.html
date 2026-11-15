@@ -245,7 +245,7 @@ body{background:#E7ECF5 radial-gradient(circle at 20% 0%, #F3F6FB 0, transparent
     <p class="bk-school">Trường Đại học Bách khoa – ĐHQG-HCM</p>
     <h1 class="bk-title">Thư mời<br>Lễ Tốt nghiệp</h1>
 
-    <p class="bk-lead">Thân mời gia đình, đồng nghiệp và bạn bè đến chung vui trong ngày tốt nghiệp của</p>
+    <p class="bk-lead">Thân mời gia đình, thầy cô và bạn bè đến chung vui trong ngày tốt nghiệp của</p>
     <p class="bk-name">Nguyễn Huỳnh Long Nhi</p> <!-- ✏️ SỬA: tên của bạn -->
     <p class="bk-degree">Tân Kỹ sư · <a class="bk-tel" href="tel:+84906635261">📞 0906 635 261</a></p> <!-- ✏️ SỬA nếu muốn thêm ngành -->
 
@@ -291,27 +291,6 @@ body{background:#E7ECF5 radial-gradient(circle at 20% 0%, #F3F6FB 0, transparent
     </section>
 
     <div class="bk-divider" aria-hidden="true"><span></span></div>
-
-    
-
-    <section class="bk-section" id="gui-xe">
-      <h2>Gửi xe máy trong trường</h2>
-      <p class="bk-intro">Hôm đó trường sẽ rất đông, mọi người nên đến sớm vào buổi sáng để còn chỗ gửi xe. Có 3 bãi xe gần nhất, đi theo đường màu cam:</p>
-      <figure class="bk-park">
-        <div class="bk-parkmap">
-          <img src="https://nhlongnhi.wordpress.com/wp-content/uploads/2026/11/img_1_1794718173838.jpg" data-capture-src="so-do-bach-khoa.png" alt="Sơ đồ đường vào 3 bãi gửi xe máy trong Trường Đại học Bách khoa" width="803" height="382" loading="lazy">
-<svg id="parkSvg" viewBox="0 0 803 382" preserveAspectRatio="none" aria-hidden="true"></svg>
-        </div>
-      </figure>
-      <ol class="bk-parklist">
-        <li><span class="bk-p">P1</span><div><b>Bãi giữa B3 và B4</b>Vào <b>Cổng 1</b> (đường Lý Thường Kiệt), rẽ trái về phía tòa B3, chạy thẳng đến khoảng sân giữa B3 và B4.</div></li>
-        <li><span class="bk-p">P2</span><div><b>Bãi cạnh tòa B1</b>Vào <b>Cổng 1</b>, rẽ phải về phía tòa B1, gửi xe ở lối giữa B1A và B1B.</div></li>
-        <li><span class="bk-p">P3</span><div><b>Bãi giữa C2 và B10</b>Vào <b>Cổng 3</b> (đường Tô Hiến Thành), chạy thẳng lên rồi rẽ trái vào khu giữa C2 và B10.</div></li>
-      </ol>
-      <p class="bk-callout"><b>Lưu ý:</b> Nếu bãi xe trong trường đã kín, mọi người có thể gửi xe ở khu vực bên ngoài gần trường, ví dụ <b>Bệnh viện Trung Vương</b> hoặc <b>Sân vận động Phú Thọ</b> (ngoài khuôn viên, không do trường quản lý).</p>
-      <p class="bk-center"><a class="bk-btn" href="https://www.facebook.com/reel/2078243583062569" target="_blank" rel="noopener">▶ Xem video hướng dẫn gửi xe</a></p>
-    </section>
-    <div class="bk-divider" aria-hidden="true"><span></span></div>
     <footer class="bk-sign">
       <p class="bk-sign-line">Rất mong được gặp mọi người!</p>
       <p class="bk-sign-name">Nguyễn Huỳnh Long Nhi</p> <!-- ✏️ SỬA -->
@@ -338,21 +317,6 @@ body{background:#E7ECF5 radial-gradient(circle at 20% 0%, #F3F6FB 0, transparent
         <button class="bk-btn bk-btn--solid" id="sendBtn" type="button" disabled>Cập nhật</button>
       </div>
       <p class="bk-msg" id="msg"></p>
-      <div class="bk-geom">
-        <p class="bk-group">Chỉnh đường đi &amp; vùng gửi xe</p>
-        <div class="bk-row">
-          <button class="bk-btn" id="geomToggle" type="button">✏️ Bật chế độ chỉnh</button>
-          <button class="bk-btn" id="geomReset" type="button">↺ Khôi phục mặc định</button>
-        </div>
-        <p class="bk-geom-status" id="geomStatus"></p>
-        <label for="geomOut">Dữ liệu hiện tại: bấm sao chép rồi gửi cho mình</label>
-        <textarea id="geomOut" rows="4" readonly></textarea>
-        <div class="bk-row"><button class="bk-btn" id="geomCopy" type="button">📋 Sao chép</button></div>
-        <label for="geomIn">Muốn xem thử một bản khác? Dán dữ liệu vào đây</label>
-        <textarea id="geomIn" rows="3" placeholder="Dán chuỗi JSON vào đây"></textarea>
-        <div class="bk-row"><button class="bk-btn" id="geomApply" type="button">Áp dụng</button></div>
-        <p class="bk-msg" id="geomMsg"></p>
-      </div>
       <div class="bk-shot">
         <p class="bk-group">Chụp ảnh để gửi</p>
         <div class="bk-row"><button class="bk-btn bk-btn--solid" id="shotBtn" type="button">📸 Chụp ảnh thiệp</button></div>
@@ -621,200 +585,6 @@ if (isAdmin){
 
 }
 
-/* ===== Chỉnh đường đi & vùng gửi xe (chỉ dùng trong ?admin) ===== */
-const GEOM_DEFAULT = {"polys":{"P1":[[225.8,157.8],[177.2,157.8],[183.9,135.5],[226.6,136.2]],"P3":[[567.4,159.9],[565.9,146.3],[681.3,144.1],[687.3,158.5]],"P2":[[155.4,317.2],[143.4,315.1],[157.7,253.3],[169.7,254]]},"routes":{"P1":[[141.9,198.7],[167.4,133.3],[187.6,134.8]],"P2":[[114.2,192.2],[141.2,198.7],[114.2,260.5],[153.9,261.2]],"P3":[[770.4,249.7],[722.5,146.3],[695.5,149.9]]},"badges":{"P1":[206,121],"P2":[112.7,235.3],"P3":[721,176.4]}};
-const GEOM_KEY = 'bk-geom-v1';
-const GEOM_MIN = { poly: 3, route: 2 };
-const GEOM_W = 803, GEOM_H = 382;
-let GEOM = cloneG(GEOM_DEFAULT);
-let gDrag = null;
-let gUsingSaved = false;
-
-function cloneG(o){ return JSON.parse(JSON.stringify(o)); }
-function r1(v){ return Math.round(v * 10) / 10; }
-function clampG(p){ return [Math.max(0, Math.min(GEOM_W, p[0])), Math.max(0, Math.min(GEOM_H, p[1]))]; }
-function geomSay(text, cls){ const m = $('geomMsg'); m.textContent = text; m.className = 'bk-msg' + (cls ? ' ' + cls : ''); }
-
-function validGeom(g){
-  if (!g || typeof g !== 'object') return false;
-  const okPt = p => Array.isArray(p) && p.length === 2 && p.every(n => typeof n === 'number' && isFinite(n));
-  for (const k of Object.keys(GEOM_DEFAULT.polys)) {
-    if (!g.polys || !Array.isArray(g.polys[k]) || g.polys[k].length < GEOM_MIN.poly || !g.polys[k].every(okPt)) return false;
-  }
-  for (const k of Object.keys(GEOM_DEFAULT.routes)) {
-    if (!g.routes || !Array.isArray(g.routes[k]) || g.routes[k].length < GEOM_MIN.route || !g.routes[k].every(okPt)) return false;
-  }
-  for (const k of Object.keys(GEOM_DEFAULT.badges)) {
-    if (!g.badges || !okPt(g.badges[k])) return false;
-  }
-  return true;
-}
-function normalizeG(g){
-  const o = { polys: {}, routes: {}, badges: {} };
-  for (const k of Object.keys(GEOM_DEFAULT.polys)) o.polys[k] = g.polys[k].map(p => [r1(p[0]), r1(p[1])]);
-  for (const k of Object.keys(GEOM_DEFAULT.routes)) o.routes[k] = g.routes[k].map(p => [r1(p[0]), r1(p[1])]);
-  for (const k of Object.keys(GEOM_DEFAULT.badges)) o.badges[k] = [r1(g.badges[k][0]), r1(g.badges[k][1])];
-  return o;
-}
-
-try {
-  if (isAdmin) {
-    const saved = JSON.parse(localStorage.getItem(GEOM_KEY) || 'null');
-    if (validGeom(saved)) { GEOM = normalizeG(saved); gUsingSaved = true; }
-  }
-} catch (e) {}
-
-function saveGeom(){
-  if (!isAdmin) return;
-  try { localStorage.setItem(GEOM_KEY, JSON.stringify(normalizeG(GEOM))); gUsingSaved = true; } catch (e) {}
-  updateGeomOut();
-}
-function updateGeomOut(){
-  $('geomOut').value = JSON.stringify(normalizeG(GEOM));
-  $('geomStatus').textContent = gUsingSaved
-    ? 'Đang xem bản chỉnh đã lưu trên máy này. Trang khách vẫn dùng bản trong file cho đến khi được cập nhật.'
-    : 'Đang dùng bản mặc định trong file.';
-}
-
-function svgPtOf(e){
-  const svg = $('parkSvg'), r = svg.getBoundingClientRect();
-  return [(e.clientX - r.left) * GEOM_W / r.width, (e.clientY - r.top) * GEOM_H / r.height];
-}
-function projectOnSeg(px, py, a, b){
-  const dx = b[0] - a[0], dy = b[1] - a[1], L = dx * dx + dy * dy;
-  let t = L ? ((px - a[0]) * dx + (py - a[1]) * dy) / L : 0;
-  t = Math.max(0, Math.min(1, t));
-  const q = [a[0] + t * dx, a[1] + t * dy];
-  return { d: Math.hypot(px - q[0], py - q[1]), p: q };
-}
-
-function renderPark(){
-  const svg = $('parkSvg'); if (!svg) return;
-  const edit = svg.classList.contains('editing');
-  const f = v => String(r1(v));
-  const pts = a => a.map(p => f(p[0]) + ',' + f(p[1])).join(' ');
-  const dp = a => 'M' + a.map(p => f(p[0]) + ',' + f(p[1])).join(' L');
-  let h = '<defs><marker id="bk-arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C2410C"/></marker></defs>';
-  h += '<g fill="#C2410C" fill-opacity=".4" stroke="#C2410C" stroke-width="2" stroke-linejoin="round">';
-  for (const k in GEOM.polys) h += '<polygon data-kind="poly" data-key="' + k + '" points="' + pts(GEOM.polys[k]) + '"/>';
-  h += '</g><g fill="none" stroke-linecap="round" stroke-linejoin="round">';
-  h += '<g stroke="#fff" stroke-width="7" opacity=".9">';
-  for (const k in GEOM.routes) h += '<path d="' + dp(GEOM.routes[k]) + '"/>';
-  h += '</g>';
-  h += '<g class="bk-route" stroke="#C2410C" stroke-width="3.5" stroke-dasharray="8 6" marker-end="url(#bk-arrow)">';
-  for (const k in GEOM.routes) h += '<path d="' + dp(GEOM.routes[k]) + '"/>';
-  h += '</g>';
-  if (edit) {
-    h += '<g fill="none" stroke="transparent" stroke-width="14" style="pointer-events:stroke;cursor:copy">';
-    for (const k in GEOM.routes) h += '<path data-kind="route" data-key="' + k + '" d="' + dp(GEOM.routes[k]) + '"/>';
-    h += '</g>';
-  }
-  h += '</g>';
-  if (edit) {
-    h += '<g>';
-    for (const k in GEOM.polys) GEOM.polys[k].forEach((p, i) => {
-      h += '<circle data-kind="pt" data-type="poly" data-key="' + k + '" data-i="' + i + '" cx="' + f(p[0]) + '" cy="' + f(p[1]) + '" r="4.5" fill="#fff" stroke="#C2410C" stroke-width="2" style="cursor:move"/>';
-    });
-    for (const k in GEOM.routes) GEOM.routes[k].forEach((p, i) => {
-      h += '<circle data-kind="pt" data-type="route" data-key="' + k + '" data-i="' + i + '" cx="' + f(p[0]) + '" cy="' + f(p[1]) + '" r="3.8" fill="#0A3A8C" stroke="#fff" stroke-width="1.5" style="cursor:move"/>';
-    });
-    h += '</g>';
-  }
-  h += '<g font-family="Be Vietnam Pro, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle">';
-  for (const k in GEOM.badges) {
-    const x = GEOM.badges[k][0], y = GEOM.badges[k][1];
-    h += '<g data-kind="badge" data-key="' + k + '"' + (edit ? ' style="cursor:move"' : '') + '>' +
-         '<circle cx="' + f(x) + '" cy="' + f(y) + '" r="11.5" fill="#C2410C" stroke="#fff" stroke-width="2"/>' +
-         '<text x="' + f(x) + '" y="' + f(y + 4) + '" fill="#fff">' + k + '</text></g>';
-  }
-  h += '</g>';
-  svg.innerHTML = h;
-}
-
-const parkSvgEl = $('parkSvg');
-let gLast = null;
-
-function geomEditAt(t, p){
-  const kind = t.dataset.kind, key = t.dataset.key;
-  if (kind === 'pt') {
-    const type = t.dataset.type, arr = (type === 'poly' ? GEOM.polys : GEOM.routes)[key], i = +t.dataset.i;
-    if (arr.length <= GEOM_MIN[type]) return geomSay('Cần giữ ít nhất ' + GEOM_MIN[type] + ' điểm.', 'err');
-    arr.splice(i, 1);
-    geomSay('Đã xoá điểm.', 'ok');
-  } else if (kind === 'poly' || kind === 'route') {
-    const arr = (kind === 'poly' ? GEOM.polys : GEOM.routes)[key];
-    const n = arr.length, segs = kind === 'poly' ? n : n - 1;
-    let best = null;
-    for (let i = 0; i < segs; i++) {
-      const q = projectOnSeg(p[0], p[1], arr[i], arr[(i + 1) % n]);
-      if (!best || q.d < best.d) best = { d: q.d, at: i + 1, p: q.p };
-    }
-    arr.splice(best.at, 0, [r1(best.p[0]), r1(best.p[1])]);
-    geomSay('Đã thêm điểm.', 'ok');
-  } else return;
-  saveGeom(); renderPark();
-}
-
-/* Nhấp đúp được nhận diện từ hai lần nhấn liên tiếp (chuột và cảm ứng đều dùng được) */
-parkSvgEl.addEventListener('pointerdown', e => {
-  if (!parkSvgEl.classList.contains('editing')) return;
-  const t = e.target.closest('[data-kind]');
-  if (!t) return;
-  e.preventDefault();
-  const p = svgPtOf(e);
-  const sig = [t.dataset.kind, t.dataset.type, t.dataset.key, t.dataset.i].join('|');
-  const dbl = gLast && gLast.sig === sig && Date.now() - gLast.t < 400 && Math.hypot(p[0] - gLast.p[0], p[1] - gLast.p[1]) < 12;
-  gLast = dbl ? null : { sig, t: Date.now(), p };
-  gDrag = null;
-  if (dbl) return geomEditAt(t, p);
-  if (t.dataset.kind === 'pt') gDrag = { type: t.dataset.type, key: t.dataset.key, i: +t.dataset.i };
-  else if (t.dataset.kind === 'badge') gDrag = { type: 'badge', key: t.dataset.key };
-  if (gDrag) parkSvgEl.setPointerCapture(e.pointerId);
-});
-parkSvgEl.addEventListener('pointermove', e => {
-  if (!gDrag) return;
-  const p = clampG(svgPtOf(e));
-  if (gDrag.type === 'badge') GEOM.badges[gDrag.key] = [r1(p[0]), r1(p[1])];
-  else (gDrag.type === 'poly' ? GEOM.polys : GEOM.routes)[gDrag.key][gDrag.i] = [r1(p[0]), r1(p[1])];
-  renderPark();
-});
-function endGeomDrag(e){
-  if (!gDrag) return;
-  gDrag = null; saveGeom();
-  try { parkSvgEl.releasePointerCapture(e.pointerId); } catch (_) {}
-}
-parkSvgEl.addEventListener('pointerup', endGeomDrag);
-parkSvgEl.addEventListener('pointercancel', endGeomDrag);
-
-$('geomToggle').addEventListener('click', () => {
-  const on = !parkSvgEl.classList.contains('editing');
-  parkSvgEl.classList.toggle('editing', on);
-  $('geomToggle').textContent = on ? '✅ Đang chỉnh · bấm để tắt' : '✏️ Bật chế độ chỉnh';
-  geomSay(on ? 'Kéo chấm để chỉnh vị trí. Nhấp đúp vào chấm để xoá, nhấp đúp vào cạnh hoặc đường để thêm điểm.' : '', '');
-  renderPark();
-  if (on) parkSvgEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-});
-$('geomReset').addEventListener('click', () => {
-  GEOM = cloneG(GEOM_DEFAULT); gUsingSaved = false;
-  try { localStorage.removeItem(GEOM_KEY); } catch (e) {}
-  renderPark(); updateGeomOut(); geomSay('Đã khôi phục bản mặc định.', 'ok');
-});
-$('geomCopy').addEventListener('click', async () => {
-  const txt = $('geomOut').value;
-  try { await navigator.clipboard.writeText(txt); geomSay('Đã sao chép. Dán vào tin nhắn gửi cho mình nhé.', 'ok'); }
-  catch (e) { $('geomOut').select(); try { document.execCommand('copy'); } catch (_) {} geomSay('Đã chọn sẵn nội dung, bấm Ctrl+C (hoặc giữ và chọn Sao chép) để lấy.', 'ok'); }
-});
-$('geomApply').addEventListener('click', () => {
-  let g;
-  try { g = JSON.parse($('geomIn').value.trim()); } catch (e) { return geomSay('Dữ liệu không đúng định dạng JSON.', 'err'); }
-  if (!validGeom(g)) return geomSay('Thiếu polys / routes / badges, hoặc số điểm không đủ.', 'err');
-  GEOM = normalizeG(g); gUsingSaved = true; saveGeom(); renderPark(); updateGeomOut();
-  geomSay('Đã áp dụng. Bản này chỉ hiện trên máy này.', 'ok');
-});
-
-renderPark();
-updateGeomOut();
-
 /* ===== Chụp ảnh thiệp để gửi (chỉ trong ?admin) ===== */
 let gShotBlob = null, gShotUrl = null;
 function shotSay(text, cls){ const m = $('shotMsg'); m.textContent = text; m.className = 'bk-msg' + (cls ? ' ' + cls : ''); }
@@ -823,13 +593,15 @@ async function captureCard(){
   const card = document.querySelector('article.bk-card');
   const imgs = [...document.querySelectorAll('img[data-capture-src]')];
   const original = imgs.map(i => i.getAttribute('src'));
-  /* Chỉ chụp từ đầu thiệp đến trước phần "Gửi xe máy" */
-  const guiXe = document.getElementById('gui-xe');
+  /* Chỉ chụp phần thư mời: bỏ nút bấm và phần bản đồ trực tiếp */
+  const liveSec = document.getElementById('ban-do');
   const hideList = [];
-  if (guiXe) {
-    const prev = guiXe.previousElementSibling;
+  const actions = card.querySelector('.bk-actions');
+  if (actions) hideList.push(actions);
+  if (liveSec) {
+    const prev = liveSec.previousElementSibling;
     if (prev && prev.classList.contains('bk-divider')) hideList.push(prev);
-    for (let n = guiXe; n; n = n.nextElementSibling) hideList.push(n);
+    hideList.push(liveSec);
   }
   hideList.forEach(e => e.style.display = 'none');
   try {

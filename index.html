@@ -293,9 +293,9 @@ body{background:#E7ECF5 radial-gradient(circle at 20% 0%, #F3F6FB 0, transparent
     <p class="bk-school">Trường Đại học Bách khoa – ĐHQG-HCM</p>
     <h1 class="bk-title">Thư mời<br>Lễ Tốt nghiệp</h1>
 
-    <p class="bk-lead">Thân mời gia đình, bạn bè và đồng nghiệp đến chung vui trong ngày tốt nghiệp của</p>
+    <p class="bk-lead">Thân mời gia đình, thầy cô và bạn bè đến chung vui trong ngày tốt nghiệp của</p>
     <p class="bk-name">Nguyễn Huỳnh Long Nhi</p> <!-- ✏️ SỬA: tên của bạn -->
-    <p class="bk-degree">Tân Kỹ sư · <a class="bk-tel" href="tel:+84906635261">📞 090 663 5261</a></p> <!-- ✏️ SỬA nếu muốn thêm ngành -->
+    <p class="bk-degree">Tân Kỹ sư · <a class="bk-tel" href="tel:+84906635261">📞 0906 635 261</a></p> <!-- ✏️ SỬA nếu muốn thêm ngành -->
 
     <dl class="bk-facts">
       <div><dt>Ngày</dt><dd>Thứ Sáu, 27/11/2026</dd></div>      <!-- ✏️ SỬA -->
@@ -361,6 +361,14 @@ body{background:#E7ECF5 radial-gradient(circle at 20% 0%, #F3F6FB 0, transparent
   <section class="bk-panel hidden" id="panel">
       <p class="bk-panel-eyebrow">Chỉ bạn thấy phần này · chế độ ?admin</p>
       <h3>Cập nhật vị trí của mình</h3>
+      <div class="bk-keybox">
+        <label for="adminKey" id="keyLabel">Mật khẩu quản lý</label>
+        <p class="bk-geom-status" id="keyStatus"></p>
+        <div class="bk-row">
+          <input type="password" id="adminKey" autocomplete="current-password" placeholder="Nhập mật khẩu quản lý" style="flex:1; min-width:0">
+          <button class="bk-btn" id="keySave" type="button">Lưu</button>
+        </div>
+      </div>
       <p class="bk-panel-hint">Chạm vào sơ đồ, kéo thả marker xanh, hoặc chọn nhanh một điểm. Thêm ghi chú nếu muốn, rồi bấm “Cập nhật”.</p>
       <p class="bk-group">Điểm chính</p>
       <div class="bk-chips" id="chipsKey"></div>
@@ -452,6 +460,7 @@ function ago(t){
 }
 
 const OUT_TAG = /^\[(away|gone)\]\s*/;
+function getAdminKey(){ try { return localStorage.getItem('bk-admin-key') || ''; } catch (e) { return ''; } }
 function encodeOut(pos, base){
   const txt = $('statusInput').value.trim();
   if (pos.mode === 'away' || pos.mode === 'gone')
@@ -529,6 +538,26 @@ document.addEventListener('visibilitychange', () => { if (!document.hidden) load
 /* ---------- Chế độ quản lý (chỉ khi link có ?admin) ---------- */
 if (isAdmin){
   $('panel').classList.remove('hidden');
+  const keyInput = $('adminKey');
+  /* Đăng nhập một lần: mật khẩu được nhớ trên máy này, không phải nhập lại */
+  const keyRefresh = () => {
+    const logged = !!getAdminKey();
+    $('keyStatus').textContent = logged
+      ? '✅ Đã đăng nhập trên máy này, không cần nhập lại.'
+      : 'Nhập mật khẩu quản lý một lần để đăng nhập trên máy này.';
+    $('keySave').textContent = logged ? 'Đăng xuất' : 'Đăng nhập';
+    keyInput.value = '';
+    keyInput.classList.toggle('hidden', logged);
+    $('keyLabel').classList.toggle('hidden', logged);
+  };
+  $('keySave').addEventListener('click', () => {
+    if (getAdminKey()) { try { localStorage.removeItem('bk-admin-key'); } catch (e) {} keyRefresh(); return; }
+    const k = keyInput.value.trim();
+    if (!k) { $('msg').textContent = 'Nhập mật khẩu quản lý trước.'; $('msg').className = 'bk-msg err'; return; }
+    try { localStorage.setItem('bk-admin-key', k); } catch (e) {}
+    keyRefresh();
+  });
+  keyRefresh();
 
   function chip(container, item, isState, isKey){
     const b = document.createElement('button');
@@ -620,16 +649,21 @@ if (isAdmin){
     if (!configured){ $('msg').textContent = 'Chưa dán link Apps Script vào CONFIG.API_URL.'; $('msg').className = 'bk-msg err'; return; }
     const base = current && current.x != null ? current : { x: 50, y: 50 };
     const pos = Object.assign({ x: base.x, y: base.y, mode: (current && current.mode) || 'here' }, pending || {});
+    if (!getAdminKey()){ $('msg').textContent = 'Nhập mật khẩu quản lý ở phía trên trước.'; $('msg').className = 'bk-msg err'; return; }
     $('sendBtn').disabled = true; $('msg').textContent = 'Đang gửi…'; $('msg').className = 'bk-msg';
     try{
       const r = await fetch(CONFIG.API_URL, {
         method: 'POST',
-        body: JSON.stringify(encodeOut(pos, base))
+        body: JSON.stringify(Object.assign(encodeOut(pos, base), { key: getAdminKey() }))
       });
       const res = await r.json();
       if (!res.ok){
-        $('msg').textContent = res.error === 'pin'
-          ? 'Apps Script vẫn đang chạy bản cũ có PIN. Vào Deploy → Manage deployments → Edit → New version → Deploy.'
+        if (res.error === 'auth') {
+          try { localStorage.removeItem('bk-admin-key'); } catch (e) {}
+          keyRefresh();
+        }
+        $('msg').textContent = res.error === 'auth'
+          ? 'Mật khẩu quản lý không đúng. Nhập lại ở phía trên nhé.'
           : 'Không lưu được, thử lại nhé.';
         $('msg').className = 'bk-msg err';
         $('sendBtn').disabled = false; return;

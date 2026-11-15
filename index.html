@@ -224,6 +224,54 @@ body{background:#E7ECF5 radial-gradient(circle at 20% 0%, #F3F6FB 0, transparent
 .bk-shotbox img{width:100%; height:auto; display:block; border:1px solid var(--line); background:#fff}
 .bk-shotbox .bk-row{margin-top:12px}
 .bk-tel{color:var(--blue); font-weight:500; text-decoration:none; white-space:nowrap}
+
+/* ---- layout tightened vertically ---- */
+.bk-invite{padding:20px 12px 36px}
+.bk-card{padding:38px 44px 26px}
+.bk-title{margin-top:18px !important}
+.bk-lead{margin-top:14px !important; font-size:18px}
+.bk-name{margin-top:4px !important; padding-bottom:8px}
+.bk-degree{margin-top:6px !important}
+.bk-facts{margin-top:18px}
+.bk-facts div{padding:10px 14px 2px 0}
+.bk-facts div+div{padding-left:14px}
+.bk-actions{margin-top:16px; gap:10px}
+.bk-divider{margin:24px 0 20px}
+.bk-section h2{font-size:22px; margin-bottom:12px !important}
+.bk-section h2::after{margin-top:8px}
+.bk-campus{margin-top:12px; padding:8px}
+.bk-live-text{font-size:15px}
+.bk-live{padding:10px 14px}
+.bk-campus figcaption{margin-top:6px}
+@media (max-width:600px){
+  .bk-card{padding:30px 20px 20px}
+  .bk-divider{margin:18px 0 16px}
+  .bk-facts div{padding:8px 10px 2px 0}
+  .bk-facts div+div{padding-left:10px}
+}
+
+/* ---- compact vertical rhythm (both modes) ---- */
+.bk-intro{margin-top:0 !important; font-size:15px; line-height:1.5}
+.bk-park{margin-top:12px; padding:6px}
+.bk-parklist{margin-top:12px !important; gap:8px}
+.bk-parklist li{gap:10px; font-size:15px; line-height:1.45}
+.bk-p{width:28px; height:28px; font-size:12px}
+.bk-callout{margin-top:12px !important; padding:9px 14px; font-size:14px; line-height:1.45}
+.bk-center{margin-top:12px !important}
+.bk-center .bk-btn{padding:10px 18px; font-size:14px}
+.bk-live{padding:9px 14px}
+.bk-live-text{font-size:15px}
+.bk-section{margin-top:0}
+.bk-section h2{margin-bottom:10px !important}
+.bk-facts div{padding:8px 14px 2px 0}
+.bk-actions{margin-top:14px}
+.bk-card{padding:32px 44px 22px}
+.bk-divider{margin:20px 0 16px}
+@media (max-width:600px){
+  .bk-card{padding:26px 18px 18px}
+  .bk-divider{margin:14px 0 12px}
+  .bk-parklist{gap:6px}
+}
 </style>
 </head>
 <body>
@@ -245,9 +293,9 @@ body{background:#E7ECF5 radial-gradient(circle at 20% 0%, #F3F6FB 0, transparent
     <p class="bk-school">Trường Đại học Bách khoa – ĐHQG-HCM</p>
     <h1 class="bk-title">Thư mời<br>Lễ Tốt nghiệp</h1>
 
-    <p class="bk-lead">Thân mời gia đình, thầy cô và bạn bè đến chung vui trong ngày tốt nghiệp của</p>
+    <p class="bk-lead">Thân mời gia đình, bạn bè và đồng nghiệp đến chung vui trong ngày tốt nghiệp của</p>
     <p class="bk-name">Nguyễn Huỳnh Long Nhi</p> <!-- ✏️ SỬA: tên của bạn -->
-    <p class="bk-degree">Tân Kỹ sư · <a class="bk-tel" href="tel:+84906635261">📞 0906 635 261</a></p> <!-- ✏️ SỬA nếu muốn thêm ngành -->
+    <p class="bk-degree">Tân Kỹ sư · <a class="bk-tel" href="tel:+84906635261">📞 090 663 5261</a></p> <!-- ✏️ SỬA nếu muốn thêm ngành -->
 
     <dl class="bk-facts">
       <div><dt>Ngày</dt><dd>Thứ Sáu, 27/11/2026</dd></div>      <!-- ✏️ SỬA -->
@@ -289,12 +337,24 @@ body{background:#E7ECF5 radial-gradient(circle at 20% 0%, #F3F6FB 0, transparent
     </figure>
 
     </section>
-
-    <div class="bk-divider" aria-hidden="true"><span></span></div>
-    <footer class="bk-sign">
-      <p class="bk-sign-line">Rất mong được gặp mọi người!</p>
-      <p class="bk-sign-name">Nguyễn Huỳnh Long Nhi</p> <!-- ✏️ SỬA -->
-    </footer>
+      <div class="bk-divider" aria-hidden="true" id="gui-div"><span></span></div>
+    <section class="bk-section" id="gui-xe">
+      <h2>Gửi xe máy trong trường</h2>
+      <p class="bk-intro">Hôm đó trường sẽ rất đông, mọi người nên đến sớm vào buổi sáng để còn chỗ gửi xe. Có 3 bãi xe gần nhất, đi theo đường màu cam:</p>
+      <figure class="bk-park">
+        <div class="bk-parkmap">
+          <img src="https://nhlongnhi.wordpress.com/wp-content/uploads/2026/11/img_1_1794718173838.jpg" data-capture-src="so-do-bach-khoa.png" alt="Sơ đồ đường vào 3 bãi gửi xe máy trong Trường Đại học Bách khoa" width="803" height="382" loading="lazy">
+<svg viewBox="0 0 803 382" preserveAspectRatio="none" aria-hidden="true"><defs><marker id="bk-arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C2410C"/></marker></defs><g fill="#C2410C" fill-opacity=".4" stroke="#C2410C" stroke-width="2" stroke-linejoin="round"><polygon points="225.8,157.8 177.2,157.8 183.9,135.5 226.6,136.2"/><polygon points="567.4,159.9 565.9,146.3 681.3,144.1 687.3,158.5"/><polygon points="155.4,317.2 143.4,315.1 157.7,253.3 169.7,254.0"/></g><g fill="none" stroke-linecap="round" stroke-linejoin="round"><g stroke="#fff" stroke-width="7" opacity=".9"><path d="M141.9,198.7 L167.4,133.3 L187.6,134.8"/><path d="M114.2,192.2 L141.2,198.7 L114.2,260.5 L153.9,261.2"/><path d="M770.4,249.7 L722.5,146.3 L695.5,149.9"/></g><g class="bk-route" stroke="#C2410C" stroke-width="3.5" stroke-dasharray="8 6" marker-end="url(#bk-arrow)"><path d="M141.9,198.7 L167.4,133.3 L187.6,134.8"/><path d="M114.2,192.2 L141.2,198.7 L114.2,260.5 L153.9,261.2"/><path d="M770.4,249.7 L722.5,146.3 L695.5,149.9"/></g></g><g font-family="Be Vietnam Pro, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle"><g><circle cx="206" cy="121" r="11.5" fill="#C2410C" stroke="#fff" stroke-width="2"/><text x="206" y="125" fill="#fff">P1</text></g><g><circle cx="112.7" cy="235.3" r="11.5" fill="#C2410C" stroke="#fff" stroke-width="2"/><text x="112.7" y="239.3" fill="#fff">P2</text></g><g><circle cx="721" cy="176.4" r="11.5" fill="#C2410C" stroke="#fff" stroke-width="2"/><text x="721" y="180.4" fill="#fff">P3</text></g></g></svg>
+        </div>
+      </figure>
+      <ol class="bk-parklist">
+        <li><span class="bk-p">P1</span><div><b>Bãi xe B3</b>Vào <b>Cổng 1</b> (đường Lý Thường Kiệt), rẽ trái, chạy thẳng đến khoảng sân gửi xe.</div></li>
+        <li><span class="bk-p">P2</span><div><b>Bãi xe B1</b>Vào <b>Cổng 1</b>, rẽ phải, gửi xe ở lối đi giữa hai tòa nhà.</div></li>
+        <li><span class="bk-p">P3</span><div><b>Bãi xe cổng 3</b>Vào <b>Cổng 3</b> (đường Tô Hiến Thành), chạy thẳng lên rồi rẽ trái vào khu gửi xe.</div></li>
+      </ol>
+      <p class="bk-callout"><b>Lưu ý:</b> Nếu bãi xe trong trường đã kín, mọi người có thể gửi xe ở khu vực bên ngoài gần trường, ví dụ <b>Bệnh viện Trung Vương</b> hoặc <b>Sân vận động Phú Thọ</b>.</p>
+      <p class="bk-center"><a class="bk-btn" href="https://www.facebook.com/reel/2078243583062569" target="_blank" rel="noopener">▶ Xem video hướng dẫn gửi xe</a></p>
+    </section>
   </article>
 
     <!-- Bảng cập nhật vị trí: chỉ hiện khi mở trang với ?admin ở cuối link -->
@@ -375,6 +435,7 @@ const STATES = [
 
 const $ = id => document.getElementById(id);
 const isAdmin = new URLSearchParams(location.search).has('admin');
+if (isAdmin) { ['gui-xe','gui-div'].forEach(id => { const el = document.getElementById(id); if (el) el.classList.add('hidden'); }); }
 const configured = CONFIG.API_URL.startsWith('https://');
 let pending = null;        // vị trí đang chọn (chưa gửi)
 let current = null;        // vị trí đã lưu trên máy chủ
@@ -602,6 +663,7 @@ async function captureCard(){
     const prev = liveSec.previousElementSibling;
     if (prev && prev.classList.contains('bk-divider')) hideList.push(prev);
     hideList.push(liveSec);
+    for (let n = liveSec.nextElementSibling; n; n = n.nextElementSibling) hideList.push(n);
   }
   hideList.forEach(e => e.style.display = 'none');
   try {
